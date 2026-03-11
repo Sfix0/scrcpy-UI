@@ -6,6 +6,16 @@ Built with [Flet](https://flet.dev/) (Python + Flutter), featuring animated head
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/main.png" width="32%" alt="Main window"/>
+  <img src="screenshots/debug.png" width="32%" alt="Debug & Control Panel"/>
+  <img src="screenshots/filemanager.png" width="32%" alt="File Manager"/>
+</p>
+
+---
+
 ## ✨ Features
 
 - 📱 **USB & Wi-Fi device connection** with Smart Auto-Discovery (mDNS + ping sweep)
@@ -13,7 +23,7 @@ Built with [Flet](https://flet.dev/) (Python + Flutter), featuring animated head
 - 📂 **Built-in File Manager** for pushing/pulling files to Android
 - 🌦️ **Animated header** — sky gradient, stars, and rain that change with time of day
 - 🌍 **Localization support** — easily extendable language files
-- 🪲 **Debug panel** — live logs and diagnostics in a separate window
+- 🪲 **Debug & Control Panel** — live metrics (CPU, GPU, FPS graph, RAM) and quick actions
 - 🔋 Battery status indicator per device
 
 ---
@@ -59,7 +69,7 @@ Place any `.ttf` or `.otf` font file inside the `data/` folder — the app will 
 ```bash
 # 1. Clone the repo
 git clone https://github.com/Sfix0/scrcpy-UI.git
-cd scrcpy-ui
+cd scrcpy-UI
 
 # 2. Install Python dependencies
 pip install -r requirements.txt
@@ -77,14 +87,18 @@ python scrcpy_ui.py
 ## 📁 Project Structure
 
 ```
-scrcpy-ui/
+scrcpy-UI/
 ├── scrcpy_ui.py       # Main application entry point
 ├── header.py          # Animated sky/stars/rain header
 ├── file_manager.py    # Android file manager UI
 ├── dialogs.py         # Reusable dialog components
 ├── localization.py    # Translations, settings, ADB helpers
 ├── debug_mod.py       # Debug panel (subprocess window)
-├── data/              # Place your .ttf/.otf font file here
+├── data/              # Runtime assets
+│   ├── language.json  # UI translations
+│   ├── help.md        # In-app help content
+│   └── *.otf / *.ttf  # Custom font (not included, download separately)
+├── screenshots/       # Screenshots for README
 ├── requirements.txt
 └── LICENSE
 ```
